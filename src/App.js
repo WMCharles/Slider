@@ -1,10 +1,10 @@
 import './App.css';
-import SlideShow from './components/SlideShow';
+import Gadget from './Gadget';
 
 function App() {
   return (
     <div className="App">
-      <SlideShow/>
+      <Gadget/>
     </div>
   );
 }
