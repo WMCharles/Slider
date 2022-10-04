@@ -30,22 +30,23 @@ export default function SlideShow() {
           }, [index]
         )
     return (
-        <div className="slideshow">
-            <div className="slideshowSlider" style={sliderStyle}>
-                {colors.map((color, index) => 
-                    <div className="slide" key={index} style={{backgroundColor: color}}></div>
-                )}
+        <React.Fragment>
+            <div className="slideshow">
+              <div className="slideshowSlider" style={sliderStyle}>
+                  {colors.map((color, index) => 
+                      <div className="slide" key={index} style={{backgroundColor: color}}></div>
+                  )}
+              </div>
+              <div className='slideshowDots'>
+                  {colors.map((_, idx) => 
+                      <div 
+                          key={idx} 
+                          className={`slideDot${index === idx ? " active" : ""}`}
+                          onClick = {() => {setIndex(idx)}}
+                      ></div>
+                  )}
+              </div>
             </div>
-            <div className='slideshowDots'>
-                {colors.map((_, idx) => 
-                    <div 
-                        key={idx} 
-                        className={`slideDot${index === idx ? " active" : ""}`}
-                        onClick = {() => {setIndex(idx)}}
-                    ></div>
-                )}
-            </div>
-        </div>
-        
+        </React.Fragment>        
     )
 }
